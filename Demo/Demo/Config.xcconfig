@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  Demo
+//
+//  Created by ryudai.kimura on 2025/05/27.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+// IMMERSAL_TOKEN = YOUR_TOKEN_HERE
+// WARNING: Storing tokens in plaintext is a security risk. 
+// For production apps, use SecureTokenProvider with Keychain storage instead.

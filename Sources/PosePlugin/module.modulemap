@@ -1,0 +1,5 @@
+// module.modulemap
+module PosePlugin {
+    header "include/PosePlugin.h"
+    export *
+}
