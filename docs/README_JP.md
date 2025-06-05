@@ -7,7 +7,8 @@ visionOS 2.0+向けののSwift Packageです｡
 
 ### visionOS Enterprise API
 
-> ⚠️ **重要**: このパッケージはカメラ機能にアクセスするため、visionOS Enterprise APIが必要です。
+> [!IMPORTANT]
+> このパッケージはカメラ機能にアクセスするため、visionOS Enterprise APIが必要です。
 > Enterprise APIを使用するには、Enterpriseライセンスファイルをアプリバンドルに含める必要があります。
 > 詳細は[Accessing The Main Camera](https://developer.apple.com/documentation/visionos/accessing-the-main-camera)および[ビジネスアプリ向け空間体験の構築](https://developer.apple.com/documentation/visionOS/building-spatial-experiences-for-business-apps-with-enterprise-apis)を参照してください。
 
@@ -28,7 +29,8 @@ visionOS 2.0+向けののSwift Packageです｡
    - ターゲットの「Link Binary With Libraries」ビルドフェーズにライブラリを追加
    - Build Settingsで「Other Linker Flags」に `-lc++` を追加
 
-> **注意**: ライセンスの関係上、`libPosePlugin.a` ファイルはこのリポジトリに含まれていません。Immersalの開発者ポータルから取得する必要があります。
+> [!NOTE]
+> ライセンスの関係上、`libPosePlugin.a` ファイルはこのリポジトリに含まれていません。Immersalの開発者ポータルから取得する必要があります。
 
 ## 要件
 
@@ -114,7 +116,8 @@ if let scene = try? await Entity(named: "Scene", in: realityKitContentBundle) {
 immersalKit.mapManager.loadMap(mapId: 127558)
 ```
 
-**注意**: ImmersalKitは位置変換を自動的に処理しますが、表示制御はアプリの責務です。ローカライズが成功するまでマップを非表示にすることを推奨します。
+> [!NOTE]
+> ImmersalKitは位置変換を自動的に処理しますが、表示制御はアプリの責務です。ローカライズが成功するまでマップを非表示にすることを推奨します。
 
 ### 3. マップリソース
 
@@ -306,6 +309,12 @@ struct ContentView: View {
 
 - `libPosePlugin.a` が正しい場所にあるか確認
 - ライブラリがターゲットのビルドフェーズに追加されているか確認
+
+## 既知の問題
+
+### 座標変換時の高さオフセット
+
+座標変換後に約25cmの高さのズレが発生します。現在、パッケージ内でハードコーディングによる補正を行っています。
 
 ## ライセンス
 

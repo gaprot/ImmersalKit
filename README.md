@@ -9,7 +9,8 @@ A Swift Package for visionOS 2.0+.
 
 ### visionOS Enterprise API
 
-> ⚠️ **Important**: This package requires visionOS Enterprise API access for camera functionality.
+> [!IMPORTANT]
+> This package requires visionOS Enterprise API access for camera functionality.
 > You must include an Enterprise license file in your app bundle to use Enterprise APIs.
 > See [Apple's documentation](https://developer.apple.com/documentation/visionos/accessing-the-main-camera) and [Building spatial experiences for business apps](https://developer.apple.com/documentation/visionOS/building-spatial-experiences-for-business-apps-with-enterprise-apis) for details.
 
@@ -30,7 +31,8 @@ This package requires the PosePlugin static library from Immersal SDK:
    - Add the library to your target's "Link Binary With Libraries" build phase
    - In Build Settings, add `-lc++` to "Other Linker Flags"
 
-> **Note**: The `libPosePlugin.a` file is not included in this repository due to licensing. You must obtain it from Immersal's developer portal.
+> [!NOTE]
+> The `libPosePlugin.a` file is not included in this repository due to licensing. You must obtain it from Immersal's developer portal.
 
 ## Requirements
 
@@ -115,7 +117,8 @@ if let scene = try? await Entity(named: "Scene", in: realityKitContentBundle) {
 immersalKit.mapManager.loadMap(mapId: 127558)
 ```
 
-**Note**: ImmersalKit automatically handles position transformation, but visibility control is the app's responsibility. You may want to hide maps until localization succeeds.
+> [!NOTE]
+> ImmersalKit automatically handles position transformation, but visibility control is the app's responsibility. You may want to hide maps until localization succeeds.
 
 ### 3. Map Resources
 
@@ -345,6 +348,12 @@ If you're upgrading from an earlier version, please note these important API cha
 
 - Verify `libPosePlugin.a` is in the correct location
 - Check that the library is added to your target's build phases
+
+## Known Issues
+
+### Height Offset in Coordinate Transformation
+
+After coordinate transformation, there is approximately a 25cm height offset that requires manual adjustment. This is currently handled with a hardcoded correction in the package.
 
 ## Demo App
 
